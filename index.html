@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Outfit", sans-serif;
+        }
+        #container{
+            width: 80%;
+            margin: auto;
+        }
+
+        #banner {
+            background: url(images/pexels-dreamypixel-547114.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .heading{
+            color: #FFF;
+            font-size: 35px;
+        }
+        .Quotes{
+            width: 700px;
+            padding: 50px;
+            text-align: center;
+            backdrop-filter: blur(8px);
+            border-radius: 50px;
+            margin-top:20px ;
+           color: #fff;
+        }
+        .Quotes h2,p{
+            margin-bottom:10px;
+            line-height: 1.5;
+        }
+        #btn:hover{
+            color:#000;
+            background-color: #FFFk;
+            
+        }
+        #btn{
+            padding: 10px 20px;
+            border-radius: 50px;
+            background-color: none;
+            border: 1px solid;
+            background-color: transparent;
+            color: #fff;
+            font-size: 17px;
+            transition: 1.5s;
+        }
+
+    </style>
+</head>
+
+<body>
+    <section id="banner">
+        <div id="container">
+            <h1 class="heading">Quotes from Life :</h1>
+                <div class="info">
+                    <div class="Quotes">    
+                        <h2 id="quote">“The greatest glory in living lies not in never falling, but in rising every time we fall.” </h2>
+                        <p id="person">– Nelson Mandela</p>
+                        <button id="btn">Change Quote</button>
+
+                    </div>
+                </div>
+        </div>
+    </section>
+    <script>
+        let quotes=[
+            {quote:
+                "“The purpose of life is not to be happy. It is to be useful, to be honourable, to be compassionate, to have it make some difference that you have lived and lived well.”",
+             person:"Ralph Waldo Emerson",
+            },
+            {
+             quote:
+             "“Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.” ",
+             person:"Albert Schweitzer",
+            },
+            {
+             quote:
+             "“The purpose of life is not to be happy. It is to be useful, to be honorable, to be compassionate, to have it make some difference that you have lived and lived well.”",
+             person:"Ralph Waldo Emerson",
+            },
+            {
+             quote:
+             "“Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.”",
+             person:"Buddha",
+            },
+            {
+             quote:
+             "“You must desire the very best in life and work to deserve it”",
+             person:"PERIZ",
+            },
+            {
+             quote:
+             "“We cannot solve our Problems with the same Thinking we used when we created Them”",
+             person:"Albert Einstein",
+            }
+
+        
+
+        ];
+        let addQuote = document.getElementById("quote");
+        let person = document.getElementById("person");
+        let btn = document.getElementById("btn");
+
+        btn.addEventListener("click",() =>{
+            let result = Math.floor(Math.random() * quotes.length);
+
+            addQuote.innerText = quotes[result].quote.toUpperCase();
+            person.innerText = "– " + quotes[result].person.toUpperCase();
+        });
+    </script>
+
+</body>
+
+</html>
